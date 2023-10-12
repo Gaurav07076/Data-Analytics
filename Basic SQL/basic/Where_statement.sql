@@ -4,6 +4,10 @@ WHERE FirstName='Jim'
 
 SELECT *
 FROM EmployeeDemographics
+WHERE FirstName <> 'Jim'
+
+SELECT *
+FROM EmployeeDemographics
 WHERE Age >= 30
 
 SELECT *

@@ -13,6 +13,10 @@ FROM EmployeeDemographics
 WHERE Age > 31
 GROUP BY Gender
 
+SELECT Gender, Age, Count(Gender) as Count
+from EmployeeDemographics
+GROUP BY Gender, Age
+
 --order by is used for ascending or descending
 
 SELECT Gender,Count(Gender) as CountGender
