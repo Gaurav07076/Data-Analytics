@@ -89,8 +89,6 @@ Select dea.continent, dea.location,
 MAX(dea.population) as Total_Population, 
 MAX(cast(vac.people_vaccinated as int)) as People_Vaccinated,
 MAX(cast(vac.people_fully_vaccinated as int)) as People_Fully_Vaccinated,
-MAX(cast(vac.people_vaccinated as int)) / MAX(dea.population) * 100 
-AS Percent_Vaccinated,
 MAX(cast(vac.people_fully_vaccinated as int)) / MAX(dea.population) * 100 
 AS Percent_Fully_Vaccinated
 From CovidDeaths dea
@@ -99,7 +97,7 @@ Join CovidVaccinations vac
 	and dea.date = vac.date
 where dea.continent is not null 
 GROUP BY dea.continent, dea.location
-order by Percent_Vaccinated desc
+order by Percent_Fully_Vaccinated desc
 
 
 
